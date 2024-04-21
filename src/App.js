@@ -8,8 +8,11 @@ import mentalmeproject from './imgs/mentalmeproject.png';
 import todoproject from './imgs/todoproject.png';
 import etchasketchproject from './imgs/etchasketchproject.png';
 //icons
-import githubicon from './imgs/githubicon.png'
-import livesiteicon from './imgs/livesiteicon.jpg'
+import githubicon from './imgs/githubicon.png';
+import livesiteicon from './imgs/livesiteicon.jpg';
+import linkedinicon from './imgs/linkedinicon.png';
+
+import mailbox from './imgs/mailbox.jpg';
 
 function App() {
   const [boldOne, setBoldOne] = useState(false);
@@ -182,21 +185,32 @@ function App() {
         
       </section>
       <section className="contact">
-        <h2> Contact Me </h2>
-        <h3> Pauleena2002@gmail.com </h3>
-        <p> Have any questions? </p>
-        <form>
-          <input type="text" placeholder="Email"/>
-          <input type="text" placeholder="Subject"/>
-          <input type="text" placeholder="Message"/>
-          <button> Send </button>
-        </form>
+        <div className="contactContainer">
+          <h2> Contact Me </h2>
+          <h3> Pauleena2002@gmail.com </h3>
+          <p> Have any questions? </p>
+          <form>
+            <div className="headerContainer">
+              <input type="text" placeholder="Email" className="emailInput"/>
+              <input type="text" placeholder="Subject" className="subjectInput"/>
+            </div>
+            <textarea
+              placeholder="Message"
+              className="msgInput"
+              rows="10"
+            ></textarea>
+            <button className="formBtn"> Send </button>
+          </form>
+        </div>
+        <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
       </section>
-      
       <section className="footer">
-        <img src="" href="https://github.com/pauleenaphan" alt="github icon"/>
-        <img src="" href="https://www.linkedin.com/in/pauleena-phan-832a62247/" alt="linkedin icon"/>
+          <div className="infoContainer">
+            <img src={githubicon} href="https://github.com/pauleenaphan" alt="github icon" className="infoGithubIcon"/>
+            <img src={linkedinicon} href="https://www.linkedin.com/in/pauleena-phan-832a62247/" alt="linkedin icon" className="infoLinkedinIcon"/>
+          </div>
       </section>
+    
     </div>
     
   );
