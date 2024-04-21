@@ -2,6 +2,9 @@
   margin: 0
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* global styles */
 ul{
   list-style: none;
@@ -17,6 +20,7 @@ h2{
   text-decoration-thickness: 2px;
   line-height: 2; 
   font-size: 50px;
+  margin-bottom: 5px;
 }
 
 .header{
@@ -34,8 +38,19 @@ h2{
   gap: 20px;
 }
 
-.home{
-  height: 900px;
+.header button{
+  background-color: pink;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+}
+
+.header button:hover{
+  cursor: pointer;
+}
+
+/* .home{
+  height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +58,19 @@ h2{
   background-image: url("./imgs/cherrytree.gif");
   background-size: cover;
   background-position: center;
+} */
+
+.home {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, transparent, rgba(239, 247, 255, 0.5)), url("./imgs/cherrytree.gif");
+  background-size: cover;
+  background-position: center;
 }
+
 
 .home h1{
   font-size: 80px;
@@ -58,22 +85,56 @@ h2{
 }
 
 .about{
-  background-color: pink;
+  background-color: #eff7ff;
   display: flex;
   align-items: center;
   gap: 150px;
+  height: 1000px;
 }
 
 .about p{
   font-size: 25px;
 }
 
-.about img{
+.about .profilePic{
   width: 500px;
 }
 
+.cherryFlower1{
+  position: absolute;
+  width: 200px;
+  margin: -900px 0 0 0;
+  transform: rotate(-40deg);
+}
+
+.cherryFlower2{
+  position: absolute;
+  width: 200px;
+  margin-top: -450px;
+  margin-left: 1350px;
+  transform: rotate(120deg);
+}
+
 .skills{
-  background-color: yellow;
+  height: 400px;
+  /* background-color: #eff7ff; */
+  background: linear-gradient(to bottom, #eff7ff, pink);
+}
+
+.skills .icons{
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.skills img{
+  width: 100px;
+  height: 100px;
+}
+
+.projects{
+ background-color: pink;
+ height: 1800px;
 }
 
 /* still need to add and style imgs */
@@ -128,10 +189,16 @@ h2{
   height: 50px;
   flex-direction: row;
 }
+
+.contactSection{
+  display: flex;
+  flex-direction: column;
+  background-color: aquamarine;
+}
+
 .contact{
   display: flex;
   gap: 100px;
-  background-color: lightcoral;
 }
 
 .contact h3{
@@ -153,12 +220,12 @@ form{
   width: 100%;
 }
 
-.headerContainer{
+.formHeaderContainer{
   display: flex;
   gap: 20px;
 }
 
-.headerContainer input[type=text]{
+.formHeaderContainer input[type=text]{
   width: 100%;
 }
 
@@ -166,6 +233,7 @@ input[type=text]{
   padding: 10px;
   border-radius: 5px;
   border-width: 1px;
+
 }
 
 .formBtn{
@@ -175,19 +243,29 @@ input[type=text]{
 
 .msgInput{
   height: 200px;
-  resize: vertical;
   padding: 10px;
   line-height: 1.5; /* Adjust line height for better readability */
+  resize: none;
 }
 
 .mailboxPhoto{
   width: 500px;
 }
 
+.headContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact .icons{
+  display: flex;
+  align-items: center;
+}
+
 .infoGithubIcon{
-  width: 100px;
+  width: 50px;
 }
 
 .infoLinkedinIcon{
-  width: 90px;
+  width: 45px;
 }

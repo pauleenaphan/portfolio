@@ -1,16 +1,25 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+
 
 import profilephoto from './imgs/profilephoto.jpg';
+import cherryflower from './imgs/cherryflower.gif';
+
 //project pictures
 import weatherproject from './imgs/weatherproject.png';
 import mentalmeproject from './imgs/mentalmeproject.png';
 import todoproject from './imgs/todoproject.png';
 import etchasketchproject from './imgs/etchasketchproject.png';
 //icons
-import githubicon from './imgs/githubicon.png';
-import livesiteicon from './imgs/livesiteicon.jpg';
-import linkedinicon from './imgs/linkedinicon.png';
+import githubicon from './imgs/icons/githubicon.png';
+import livesiteicon from './imgs/icons/livesiteicon.jpg';
+import linkedinicon from './imgs/icons/linkedinicon.png';
+import htmlicon from './imgs/icons/htmlicon.svg';
+import cssicon from './imgs/icons/cssicon.svg';
+import jsicon from './imgs/icons/jsicon.svg';
+import reacticon from './imgs/icons/reacticon.svg';
+import firebaseicon from './imgs/icons/firebaseicon.svg';
+import vscodeicon from './imgs/icons/vscodeicon.svg';
 
 import mailbox from './imgs/mailbox.jpg';
 
@@ -19,6 +28,18 @@ function App() {
   const [boldTwo, setBoldTwo] = useState(false);
   const [boldThree, setBoldThree] = useState(false);
   const [boldStatus, setBoldStatus] = useState(true);
+
+  //references used to scroll to our pages
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
+  //scrolls to the page that is being clicked on
+  const scrollToRef = (ref) => {
+    ref.current.scrollIntoView({behavior: 'smooth'});
+  };
 
   //will run when the page renders and when the value of bold status is changed
   useEffect(()=>{
@@ -49,14 +70,14 @@ function App() {
     <div className="container">
       <header className="header">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><button onClick={() => scrollToRef(homeRef)}>Home</button></li>
+          <li><button onClick={() => scrollToRef(aboutRef)}>About</button></li>
+          <li><button onClick={() => scrollToRef(skillsRef)}>Skills</button></li>
+          <li><button onClick={() => scrollToRef(projectsRef)}>Projects</button></li>
+          <li><button onClick={() => scrollToRef(contactRef)}>Contact</button></li>
         </ul>
       </header>
-      <section className="home">
+      <section ref={homeRef} className="home">
         <h1> Hi, i'm Pauleena! </h1>
         <p> 
           <span style={{ fontWeight: boldOne ? 'bold' : 'normal' }}>Paw</span> -{' '}
@@ -64,7 +85,7 @@ function App() {
           <span style={{ fontWeight: boldThree ? 'bold' : 'normal' }}>nuh</span>
         </p>
       </section>
-      <section className="about">
+      <section ref={aboutRef} className="about">
         <div className="aboutContainer">
           <h2> About Me </h2>
           <p> 
@@ -75,13 +96,25 @@ function App() {
             explore new technologies in the field
           </p>
         </div>
-        <img src={profilephoto} alt="pauleena phan"/>
+        <img className="profilePic" src={profilephoto} alt="pauleena phan"/>
       </section>
-      <section className="skills">
+      <img className="cherryFlower1" src={cherryflower} alt="cherry flower"/>
+      <img className="cherryFlower2" src={cherryflower} alt="cherry flower"/>
+      
+      <section ref={skillsRef} className="skills">
         <h2> Skills and Technologies </h2>
-        html, css, javascript, react, github, vscode, firebase
+        <div className="icons">
+          <img src={htmlicon} alt="html icon"/>
+          <img src={cssicon} alt="css icon"/>
+          <img src={jsicon} alt="js icon"/>
+          <img src={reacticon} alt="react icon"/>
+          <img src={firebaseicon} alt="firebase icon"/>
+          <img src={githubicon} alt="github icon"/>
+          <img src={vscodeicon} alt="vscode icon"/>
+        </div>
+        
       </section>
-      <section className="projects">
+      <section ref={projectsRef} className="projects">
         <h2> Projects </h2>
         <div className="projectContainer">
           <div className="project">
@@ -184,32 +217,39 @@ function App() {
         </div>
         
       </section>
-      <section className="contact">
-        <div className="contactContainer">
-          <h2> Contact Me </h2>
-          <h3> Pauleena2002@gmail.com </h3>
-          <p> Have any questions? </p>
-          <form>
-            <div className="headerContainer">
-              <input type="text" placeholder="Email" className="emailInput"/>
-              <input type="text" placeholder="Subject" className="subjectInput"/>
+      <section ref={contactRef} className="contact">
+          <div className="contactContainer">
+            <h2> Contact Me </h2>
+            <div className="headContainer"> 
+              <div>
+                <h3> Pauleena2002@gmail.com </h3>
+                <p> Want to reach me? </p>
+              </div>
+              <div className="icons">
+                <a href="https://github.com/pauleenaphan">
+                  <img src={githubicon} alt="github icon" className="infoGithubIcon" />
+                </a>
+                <a href="https://www.linkedin.com/in/pauleena-phan-832a62247/">
+                  <img src={linkedinicon} alt="linkedin icon" className="infoLinkedinIcon" />
+                </a>
+              </div>
             </div>
-            <textarea
-              placeholder="Message"
-              className="msgInput"
-              rows="10"
-            ></textarea>
-            <button className="formBtn"> Send </button>
-          </form>
-        </div>
-        <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
-      </section>
-      <section className="footer">
-          <div className="infoContainer">
-            <img src={githubicon} href="https://github.com/pauleenaphan" alt="github icon" className="infoGithubIcon"/>
-            <img src={linkedinicon} href="https://www.linkedin.com/in/pauleena-phan-832a62247/" alt="linkedin icon" className="infoLinkedinIcon"/>
+            <form>
+              <div className="formHeaderContainer">
+                <input type="text" placeholder="Email" className="emailInput"/>
+                <input type="text" placeholder="Subject" className="subjectInput"/>
+              </div>
+              <textarea
+                placeholder="Message"
+                className="msgInput"
+                rows="10"
+              ></textarea>
+              <button className="formBtn"> Send </button>
+            </form>
           </div>
+          <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
       </section>
+      
     
     </div>
     
