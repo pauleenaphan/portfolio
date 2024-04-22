@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 
 import profilephoto from './imgs/profilephoto.jpg';
 import cherryflower from './imgs/cherryflower.gif';
+import peachgif from './imgs/peachgif.gif';
 
 //project pictures
-import weatherproject from './imgs/weatherproject.png';
-import mentalmeproject from './imgs/mentalmeproject.png';
-import todoproject from './imgs/todoproject.png';
-import etchasketchproject from './imgs/etchasketchproject.png';
+import weatherproject from './imgs/projects/weatherproject.png';
+import mentalmeproject from './imgs/projects/mentalmeproject.png';
+import todoproject from './imgs/projects/todoproject.png';
+import etchasketchproject from './imgs/projects/etchasketchproject.png';
+
 //icons
 import githubicon from './imgs/icons/githubicon.png';
 import livesiteicon from './imgs/icons/livesiteicon.jpg';
@@ -20,6 +22,7 @@ import jsicon from './imgs/icons/jsicon.svg';
 import reacticon from './imgs/icons/reacticon.svg';
 import firebaseicon from './imgs/icons/firebaseicon.svg';
 import vscodeicon from './imgs/icons/vscodeicon.svg';
+import giticon from './imgs/icons/giticon.svg';
 
 import mailbox from './imgs/mailbox.jpg';
 
@@ -98,24 +101,55 @@ function App() {
         </div>
         <img className="profilePic" src={profilephoto} alt="pauleena phan"/>
       </section>
-      <img className="cherryFlower1" src={cherryflower} alt="cherry flower"/>
-      <img className="cherryFlower2" src={cherryflower} alt="cherry flower"/>
+      <section className="cherryFlowers">
+        <img className="cherryFlower1" src={cherryflower} alt="cherry flower"/>
+        <img className="cherryFlower2" src={cherryflower} alt="cherry flower"/>
+        <img className="cherryFlower3" src={cherryflower} alt="cherry flower"/>
+        <img className="cherryFlower4" src={cherryflower} alt="cherry flower"/>
+      </section>
+      
       
       <section ref={skillsRef} className="skills">
         <h2> Skills and Technologies </h2>
         <div className="icons">
-          <img src={htmlicon} alt="html icon"/>
-          <img src={cssicon} alt="css icon"/>
-          <img src={jsicon} alt="js icon"/>
-          <img src={reacticon} alt="react icon"/>
-          <img src={firebaseicon} alt="firebase icon"/>
-          <img src={githubicon} alt="github icon"/>
-          <img src={vscodeicon} alt="vscode icon"/>
+          <div className="iconContainer">
+            <img src={htmlicon} alt="html icon"/>
+            <p> HTML </p>
+          </div>
+          <div className="iconContainer">
+            <img src={cssicon} alt="css icon"/>
+            <p> CSS </p>
+          </div>
+          <div className="iconContainer">
+            <img src={jsicon} alt="js icon"/>
+            <p> Javascript </p>
+          </div>
+          <div className="iconContainer">
+            <img src={reacticon} alt="react icon"/>
+            <p> React </p>
+          </div>
+          <div className="iconContainer">
+            <img src={firebaseicon} alt="firebase icon"/>
+            <p> Firebase </p>
+          </div>
+          <div className="iconContainer">
+            <img src={giticon} alt="github icon"/>
+            <p> Git </p>
+          </div>
+          <div className="iconContainer">
+            <img src={vscodeicon} alt="vscode icon"/>
+            <p> Visual Studio </p>
+          </div>
         </div>
-        
       </section>
+
+      {/* <img className="cherryleaves" src={cherryleaves} alt="cherry leaves"/> */}
+
       <section ref={projectsRef} className="projects">
-        <h2> Projects </h2>
+        <div className="headerContainer">
+          <h2> Projects </h2>
+          <img src={peachgif} alt="peachgif"/>
+        </div>
         <div className="projectContainer">
           <div className="project">
             <img src={etchasketchproject} alt="etch a sketch project"/>
@@ -249,9 +283,15 @@ function App() {
           </div>
           <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
       </section>
-      
-    
+
+      <section className="footer">
+        <p> Copyright @ Pauleena Phan 2024</p>
+        <a href="link to portolfio github" target="_blank" rel="noopener noreferrer">
+          <img src={githubicon} alt="github icon" className="icon"/>
+        </a>
+      </section>
     </div>
+
     
   );
 }

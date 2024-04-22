@@ -1,11 +1,44 @@
-*{
-  margin: 0
+/* global styles */
+/* 
+  button colors: rgb(252, 145, 163) 
+  background colors: pink
+*/
+
+/* used to bounce a button or element */
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 
-html {
-  scroll-behavior: smooth;
+/* makes an element larger and adds a underline */
+@keyframes enlargeWithUnderline {
+  from {
+    border-bottom: none;
+    transform: scale(1);
+  }
+  to {
+    border-bottom: 1px solid black;
+    transform: scale(1.3);
+  }
 }
-/* global styles */
+
+@keyframes enlargeWithBorder {
+  from {
+    transform: scale(1);
+  }
+  to {
+    border-radius: 10px;
+    background-color: pink;
+    transform: scale(1.2);
+  }
+}
+
+*{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
 ul{
   list-style: none;
 }
@@ -24,10 +57,14 @@ h2{
 }
 
 .header{
-  padding: 15px;
-  background-color: pink;
+  padding: 15px 0;
+  background-color: rgb(252, 145, 163);
   position: fixed;
   width: 100%;
+}
+
+.header li:hover {
+  animation: enlargeWithUnderline 0.3s forwards;
 }
 
 .header ul{
@@ -39,7 +76,7 @@ h2{
 }
 
 .header button{
-  background-color: pink;
+  background-color: rgb(252, 145, 163);
   font-size: 20px;
   font-weight: bold;
   border: none;
@@ -49,28 +86,16 @@ h2{
   cursor: pointer;
 }
 
-/* .home{
-  height: 1000px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("./imgs/cherrytree.gif");
-  background-size: cover;
-  background-position: center;
-} */
-
 .home {
   height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, transparent, rgba(239, 247, 255, 0.5)), url("./imgs/cherrytree.gif");
+  background: url("./imgs/cherrytree.gif");
   background-size: cover;
   background-position: center;
 }
-
 
 .home h1{
   font-size: 80px;
@@ -85,11 +110,11 @@ h2{
 }
 
 .about{
-  background-color: #eff7ff;
+  background: linear-gradient(to bottom, #eff7ff, pink);
   display: flex;
   align-items: center;
   gap: 150px;
-  height: 1000px;
+  height: 900px;
 }
 
 .about p{
@@ -100,44 +125,75 @@ h2{
   width: 500px;
 }
 
-.cherryFlower1{
+.cherryFlowers img{
   position: absolute;
   width: 200px;
-  margin: -900px 0 0 0;
+  height: 200px;
+}
+
+.cherryFlower1{
+  margin-top: -850px;
   transform: rotate(-40deg);
 }
 
 .cherryFlower2{
-  position: absolute;
-  width: 200px;
+  width: 170px;
   margin-top: -450px;
-  margin-left: 1350px;
+  margin-left: 84%;
   transform: rotate(120deg);
 }
 
+.cherryFlower3{
+  margin-top: -790px;
+  margin-left: 55%;
+}
+
+.cherryFlower4{
+  margin-top: -350px;
+  margin-left: 30%;
+  transform: rotate(40deg);
+}
 .skills{
-  height: 400px;
-  /* background-color: #eff7ff; */
-  background: linear-gradient(to bottom, #eff7ff, pink);
+  height: 500px;
+  background: linear-gradient(to bottom, pink,white);
+}
+
+.skills .iconContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0;
+  padding: 0 15px;
+}
+
+.icons .iconContainer p{
+  font-size: 20px;
+  font-weight: bold;
+  
 }
 
 .skills .icons{
   display: flex;
-  justify-content: flex-start;
-  gap: 30px;
+  justify-content: space-between;
+  height: 300px;
 }
 
 .skills img{
+  margin-bottom: 10px;
   width: 100px;
   height: 100px;
 }
 
-.projects{
- background-color: pink;
- height: 1800px;
+.icons .iconContainer:hover{
+  animation: enlargeWithBorder 0.3s forwards;
 }
 
-/* still need to add and style imgs */
+.projects{
+  background: linear-gradient(to bottom, transparent, #eff7ff, pink), url("./imgs/cherryleaves.gif");
+  height: 2100px;
+}
+
 .projectContainer{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -145,19 +201,38 @@ h2{
 }
 
 .project{
-  background-color: lightgreen;
+  background-color: rgb(255, 255, 255);
   padding: 20px;
-  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+.projects h2{
+  display: flex;
+  align-items: flex-end;
+}
+
+.projects .headerContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.headerContainer img{
+  width: 300px;
 }
 
 .project img:not(.icon){
-  width: 500px;
-  height: 300px;
+  width: 100%;
+  height: 400px;
   margin-bottom: 20px;
 }
 
 .project h3{
   font-size: 30px;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 2px;
+  line-height: 2; 
 }
 
 .project p{
@@ -174,13 +249,13 @@ h2{
 }
 
 .tools li{
-  background-color: lightgray;
+  background-color: rgb(252, 145, 163);
   font-weight: bold;
   padding: 10px 20px;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
-.iconContainer{
+.projects .iconContainer{
   text-align: right;
 }
 
@@ -190,15 +265,10 @@ h2{
   flex-direction: row;
 }
 
-.contactSection{
-  display: flex;
-  flex-direction: column;
-  background-color: aquamarine;
-}
-
 .contact{
   display: flex;
   gap: 100px;
+  background-color: pink;
 }
 
 .contact h3{
@@ -233,12 +303,23 @@ input[type=text]{
   padding: 10px;
   border-radius: 5px;
   border-width: 1px;
-
+  font-size: 20px;
 }
 
 .formBtn{
-  width: 25%;
-  margin: 0 auto;
+  width: 20%;
+  padding: 10px 0;
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  background-color: pink;
+  border-radius: 10px;
+}
+
+.formBtn:hover{
+  cursor: pointer;
+  background-color: rgb(252, 145, 163);
+  animation: bounce 0.6s ease; /* Apply the bounce animation from the keyframe*/
 }
 
 .msgInput{
@@ -246,6 +327,8 @@ input[type=text]{
   padding: 10px;
   line-height: 1.5; /* Adjust line height for better readability */
   resize: none;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .mailboxPhoto{
@@ -268,4 +351,22 @@ input[type=text]{
 
 .infoLinkedinIcon{
   width: 45px;
+}
+
+.footer{
+  background: linear-gradient(to bottom, pink, #eff7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 100px 0px 20px 0px;
+}
+
+.footer p{
+  font-size: 25px;
+}
+
+.footer img{
+  width: 40px;
+  height: 40px;
 }
