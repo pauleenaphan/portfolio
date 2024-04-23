@@ -349,7 +349,7 @@ function App() {
 
       <section className="footer">
         <p> Copyright @ Pauleena Phan 2024</p>
-        <a href="link to portolfio github" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/pauleenaphan/portfolio" target="_blank" rel="noopener noreferrer">
           <img src={githubicon} alt="github icon" className="icon"/>
         </a>
       </section>
