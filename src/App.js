@@ -44,30 +44,28 @@ function App() {
     ref.current.scrollIntoView({behavior: 'smooth'});
   };
 
-  //will run when the page renders and when the value of bold status is changed
-  useEffect(()=>{
+  useEffect(() => {
+    const setBoldTimers = () => {
+      setTimeout(() => setBoldOne(true), 1000); //paw
+      setTimeout(() => setBoldTwo(true), 2000); //lee
+      setTimeout(() => setBoldThree(true), 3000); //nuh
+  
+      //after we set the bolds to false, we change the status again so the useeffect will run again (so it loops)
+      setTimeout(()=>{
+        setBoldOne(false);
+        setBoldTwo(false);
+        setBoldThree(false);
+        setBoldStatus(!boldStatus);
+      }, 4000);
+    };
+  
     setBoldTimers();
-    return () => { //used to avoid memory leaks or clean up code
+  
+    return () => {
       clearTimeout(setBoldTimers);
-      
     };
   }, [boldStatus]);
-
-  //sets the timer for each pronounciation to be bolded
-  const setBoldTimers = () => {
-    setTimeout(() => setBoldOne(true), 1000); //paw
-    setTimeout(() => setBoldTwo(true), 2000); //lee
-    setTimeout(() => setBoldThree(true), 3000); //nuh
-
-    //after we set the bolds to false, we change the status again so the useeffect will run again (so it loops)
-    setTimeout(()=>{
-      setBoldOne(false);
-      setBoldTwo(false);
-      setBoldThree(false);
-      setBoldStatus(!boldStatus);
-    }, 4000)
-    
-  };
+  
 
   return (
     <div className="container">
