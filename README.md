@@ -2,6 +2,9 @@
 
 This portfolio website serves as a showcase of my proficiency in web development and programming. It features a collection of my projects and provides insights into my skills and background.
 
+# Live site
+[Deployed Using Netfily](https://662737e2e79d1586e81ea145--profound-croissant-f1c352.netlify.app)
+
 # Features
 - Navigation bar for easy access to each section
 - Hover effects for buttons
