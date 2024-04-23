@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect, useRef } from 'react';
-
+import emailjs from '@emailjs/browser';
 
 import profilephoto from './imgs/profilephoto.jpg';
 import cherryflower from './imgs/cherryflower.gif';
@@ -27,10 +27,29 @@ import giticon from './imgs/icons/giticon.svg';
 import mailbox from './imgs/mailbox.jpg';
 
 function App() {
+  //used for the bold pronounciation 
   const [boldOne, setBoldOne] = useState(false);
   const [boldTwo, setBoldTwo] = useState(false);
   const [boldThree, setBoldThree] = useState(false);
   const [boldStatus, setBoldStatus] = useState(true);
+
+  //used for msg has been sent popup
+  const [isMsgVisible, setMsgVisible] = useState(false);
+
+  //usestate for the form data that anyone can send or submit to my email
+  const [formData, setFormData] = useState({
+    userEmail: " ",
+    userSubject: " ",
+    userMessage: " "
+  });
+
+  //updates the form data values 
+  const updateFormData = (field, value) => {
+    setFormData(prevState => ({
+      ...prevState,
+      [field]: value
+    }));
+  };
 
   //references used to scroll to our pages
   const homeRef = useRef(null);
@@ -44,6 +63,35 @@ function App() {
     ref.current.scrollIntoView({behavior: 'smooth'});
   };
 
+  const templateParams = {
+    to_name: 'Pauleena Phan',
+    from_name: formData.userEmail,
+    subject: formData.userSubject,
+    message: formData.userMessage,
+  };
+
+  const sendMail = (event)=>{
+    event.preventDefault();
+
+    emailjs
+    .send('service_em6ucna', 'template_me2o659', templateParams,{
+      publicKey: 'r9VwP9XosCGtJF8J5',
+    })
+    .then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      },
+      (err) => {
+        console.log('FAILED...', err);
+      },
+    );
+    setMsgVisible(true);
+
+    //reset the text the user entered in the form
+    event.target.reset();
+  }
+
+  //used to create the bold animation 
   useEffect(() => {
     const setBoldTimers = () => {
       setTimeout(() => setBoldOne(true), 1000); //paw
@@ -58,13 +106,24 @@ function App() {
         setBoldStatus(!boldStatus);
       }, 4000);
     };
+     setBoldTimers();
   
-    setBoldTimers();
-  
+    //clears timer to prevent memory leaves and unwanted state updates
     return () => {
       clearTimeout(setBoldTimers);
     };
   }, [boldStatus]);
+
+  //when the user submits the contact form this will popup the msg for 5 seconds
+  useEffect(() => {
+    if (isMsgVisible){
+      const timer = setTimeout(() => {
+        setMsgVisible(false);
+      }, 5000);
+  
+      return () => clearTimeout(timer);
+    }
+  }, [isMsgVisible]);
   
 
   return (
@@ -266,20 +325,26 @@ function App() {
                 </a>
               </div>
             </div>
-            <form>
+            <form onSubmit={sendMail}>
               <div className="formHeaderContainer">
-                <input type="text" placeholder="Email" className="emailInput"/>
-                <input type="text" placeholder="Subject" className="subjectInput"/>
+                <input type="text" placeholder="Email" className="emailInput" onChange={(event) => updateFormData("userEmail", event.target.value)}/>
+                <input type="text" placeholder="Subject" className="subjectInput" onChange={(event) => updateFormData("userSubject", event.target.value)}/>
               </div>
               <textarea
                 placeholder="Message"
                 className="msgInput"
                 rows="10"
+                onChange={(event) => updateFormData("userMessage", event.target.value)}
               ></textarea>
-              <button className="formBtn"> Send </button>
+              <div className="btnContainer">
+                <button className="formBtn"> Send </button>
+                {isMsgVisible && <p className="msg"> Message has been sent! </p>}
+              </div>
+              
             </form>
           </div>
           <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
+          
       </section>
 
       <section className="footer">
@@ -288,9 +353,7 @@ function App() {
           <img src={githubicon} alt="github icon" className="icon"/>
         </a>
       </section>
-    </div>
-
-    
+    </div> 
   );
 }
 
