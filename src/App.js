@@ -291,8 +291,9 @@ function App() {
             <div className="tools">
               <ul>
                 <li> HTML </li>
-                <li> CSS </li>
+                <li> Tailwind CSS </li>
                 <li> Weather API </li>
+                <li> Javascript </li>
               </ul>
             </div>
             <div className="iconContainer">
