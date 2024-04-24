@@ -300,7 +300,7 @@ function App() {
                 <img src={githubicon} alt="github icon" className="icon"/>
               </a>
 
-              <a href="https://pauleenaphan.github.io/weather-app/" target="_blank" rel="noopener noreferrer">
+              <a href="https://pauleenaphan.github.io/weather-app/src/index.html" target="_blank" rel="noopener noreferrer">
                 <img src={livesiteicon} alt="site icon" className="icon"/>
               </a>
             </div>
