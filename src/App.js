@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 
 import profilephoto from './imgs/profilephoto.jpg';
 import cherryflower from './imgs/cherryflower.gif';
+import cherrytree from './imgs/cherrytree.gif';
 import peachgif from './imgs/peachgif.gif';
 
 //project pictures
@@ -144,6 +145,7 @@ function App() {
           <span style={{ fontWeight: boldTwo ? 'bold' : 'normal' }}>lee</span> -{' '}
           <span style={{ fontWeight: boldThree ? 'bold' : 'normal' }}>nuh</span>
         </p>
+        <img className="cherryTree" src={cherrytree} alt="cherry tree"/>
       </section>
       <section ref={aboutRef} className="about">
         <div className="aboutContainer">
