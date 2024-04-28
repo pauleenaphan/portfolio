@@ -106,7 +106,7 @@ function App() {
         setBoldStatus(!boldStatus);
       }, 4000);
     };
-     setBoldTimers();
+    setBoldTimers();
   
     //clears timer to prevent memory leaves and unwanted state updates
     return () => {
@@ -128,7 +128,7 @@ function App() {
 
   return (
     <div className="container">
-      <header className="header">
+      <nav className="navBar">
         <ul>
           <li><button onClick={() => scrollToRef(homeRef)}>Home</button></li>
           <li><button onClick={() => scrollToRef(aboutRef)}>About</button></li>
@@ -136,7 +136,7 @@ function App() {
           <li><button onClick={() => scrollToRef(projectsRef)}>Projects</button></li>
           <li><button onClick={() => scrollToRef(contactRef)}>Contact</button></li>
         </ul>
-      </header>
+      </nav>
       <section ref={homeRef} className="home">
         <h1> Hi, i'm Pauleena! </h1>
         <p> 
@@ -164,8 +164,6 @@ function App() {
         <img className="cherryFlower3" src={cherryflower} alt="cherry flower"/>
         <img className="cherryFlower4" src={cherryflower} alt="cherry flower"/>
       </section>
-      
-      
       <section ref={skillsRef} className="skills">
         <h2> Skills and Technologies </h2>
         <div className="icons">
@@ -199,9 +197,6 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* <img className="cherryleaves" src={cherryleaves} alt="cherry leaves"/> */}
-
       <section ref={projectsRef} className="projects">
         <div className="headerContainer">
           <h2> Projects </h2>
@@ -226,7 +221,6 @@ function App() {
               <a href="https://github.com/pauleenaphan/Etch-a-Sketch" target="_blank" rel="noopener noreferrer">
                 <img src={githubicon} alt="github icon" className="icon" />
               </a>
-
               <a href="https://pauleenaphan.github.io/Etch-a-Sketch/" target="_blank" rel="noopener noreferrer">
                 <img src={livesiteicon} alt="site icon" className="icon" />
               </a>
@@ -234,28 +228,31 @@ function App() {
           </div>
           <div className="project"> 
             <img src={todoproject} alt="todo project"/>
-            <h3> Things you need TODO </h3>
-            <p> 
-              This application serves as a todo manager, offering users the ability to create, view, edit, and 
-              remove tasks from their list 
-            </p>
-            <div className="tools">
-              <ul>
-                <li> HTML </li>
-                <li> CSS </li>
-                <li> Javascript </li>
-                <li> Local storage</li>
-              </ul>
-            </div>
-            <div className="iconContainer">
-              <a href="https://github.com/pauleenaphan/todo-project" target="_blank" rel="noopener noreferrer">
-                <img src={githubicon} alt="github icon" className="icon"/>
-              </a>
+            <div>
+              <h3> Things you need TODO </h3>
+              <p> 
+                This application serves as a todo manager, offering users the ability to create, view, edit, and 
+                remove tasks from their list 
+              </p>
+              <div className="tools">
+                <ul>
+                  <li> HTML </li>
+                  <li> CSS </li>
+                  <li> Javascript </li>
+                  <li> Local storage</li>
+                </ul>
+              </div>
+              <div className="iconContainer">
+                <a href="https://github.com/pauleenaphan/todo-project" target="_blank" rel="noopener noreferrer">
+                  <img src={githubicon} alt="github icon" className="icon"/>
+                </a>
 
-              <a href="https://pauleenaphan.github.io/todo-project/dist/" target="_blank" rel="noopener noreferrer">
-                <img src={livesiteicon} alt="site icon" className="icon"/>
-              </a>
-            </div> 
+                <a href="https://pauleenaphan.github.io/todo-project/dist/" target="_blank" rel="noopener noreferrer">
+                  <img src={livesiteicon} alt="site icon" className="icon"/>
+                </a>
+              </div> 
+            </div>
+            
           </div>
           <div className="project">
             <img src={mentalmeproject} alt="mentalme project"/>
@@ -307,47 +304,44 @@ function App() {
             </div>
           </div>
         </div>
-        
       </section>
       <section ref={contactRef} className="contact">
-          <div className="contactContainer">
-            <h2> Contact Me </h2>
-            <div className="headContainer"> 
-              <div>
-                <h3> Pauleena2002@gmail.com </h3>
-                <p> Want to reach me? </p>
-              </div>
-              <div className="icons">
-                <a href="https://github.com/pauleenaphan">
-                  <img src={githubicon} alt="github icon" className="infoGithubIcon" />
-                </a>
-                <a href="https://www.linkedin.com/in/pauleena-phan-832a62247/">
-                  <img src={linkedinicon} alt="linkedin icon" className="infoLinkedinIcon" />
-                </a>
-              </div>
+        <div className="contactContainer">
+          <h2> Contact Me </h2>
+          <div className="headContainer"> 
+            <div>
+              <h3> Pauleena2002@gmail.com </h3>
+              <p> Want to reach me? </p>
             </div>
-            <form onSubmit={sendMail}>
-              <div className="formHeaderContainer">
-                <input type="text" placeholder="Email" className="emailInput" onChange={(event) => updateFormData("userEmail", event.target.value)}/>
-                <input type="text" placeholder="Subject" className="subjectInput" onChange={(event) => updateFormData("userSubject", event.target.value)}/>
-              </div>
-              <textarea
-                placeholder="Message"
-                className="msgInput"
-                rows="10"
-                onChange={(event) => updateFormData("userMessage", event.target.value)}
-              ></textarea>
-              <div className="btnContainer">
-                <button className="formBtn"> Send </button>
-                {isMsgVisible && <p className="msg"> Message has been sent! </p>}
-              </div>
-              
-            </form>
+            <div className="icons">
+              <a href="https://github.com/pauleenaphan">
+                <img src={githubicon} alt="github icon" className="infoGithubIcon" />
+              </a>
+              <a href="https://www.linkedin.com/in/pauleena-phan-832a62247/">
+                <img src={linkedinicon} alt="linkedin icon" className="infoLinkedinIcon" />
+              </a>
+            </div>
           </div>
-          <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
-          
+          <form onSubmit={sendMail}>
+            <div className="formHeaderContainer">
+              <input type="text" placeholder="Email" className="emailInput" onChange={(event) => updateFormData("userEmail", event.target.value)}/>
+              <input type="text" placeholder="Subject" className="subjectInput" onChange={(event) => updateFormData("userSubject", event.target.value)}/>
+            </div>
+            <textarea
+              placeholder="Message"
+              className="msgInput"
+              rows="10"
+              onChange={(event) => updateFormData("userMessage", event.target.value)}
+            ></textarea>
+            <div className="btnContainer">
+              <button className="formBtn"> Send </button>
+              {isMsgVisible && <p className="msg"> Message has been sent! </p>}
+            </div>
+            
+          </form>
+        </div>
+        <img src={mailbox} alt="pink mailbox" className="mailboxPhoto"/>
       </section>
-
       <section className="footer">
         <p> Copyright @ Pauleena Phan 2024</p>
         <a href="https://github.com/pauleenaphan/portfolio" target="_blank" rel="noopener noreferrer">
