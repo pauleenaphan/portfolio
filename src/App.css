@@ -14,11 +14,12 @@
 /* makes an element larger and adds a underline */
 @keyframes enlargeWithUnderline {
   from {
-    border-bottom: none;
+    /* border-bottom: none; */
     transform: scale(1);
+    
   }
   to {
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     transform: scale(1.3);
   }
 }
@@ -58,13 +59,20 @@ h2{
 
 .navBar{
   padding: 15px 0;
-  background-color: rgb(252, 145, 163);
+  /* background-color: rgb(252, 145, 163); */
+  background-color: pink;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .navBar li:hover {
   animation: enlargeWithUnderline 0.3s forwards;
+
+}
+
+.navBar button:hover{
+  color: rgb(184, 43, 165);
 }
 
 .navBar ul{
@@ -76,7 +84,8 @@ h2{
 }
 
 .navBar button{
-  background-color: rgb(252, 145, 163);
+  /* background-color: rgb(252, 145, 163); */
+  background-color: pink;
   font-size: 20px;
   font-weight: bold;
   border: none;
@@ -87,25 +96,26 @@ h2{
 }
 
 .home {
+  height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
 }
 
 .home h1{
   font-size: 80px;
-  margin-top: 150px;
+
 }
 
 .home p{
   font-size: 30px;
 }
 
-.cherryTree{
-  width: 800px;
-  height: auto;
+.home .headerContainer{
+  text-align: center;
+  margin-bottom: -70px;
+  z-index: 1;
 }
 
 .about, .skills, .projects, .contact{
@@ -116,9 +126,7 @@ h2{
   background: linear-gradient(to bottom, white, pink);
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 150px;
-  height: 900px;
 }
 
 .about p{
@@ -136,24 +144,24 @@ h2{
 }
 
 .cherryFlower1{
-  margin-top: -850px;
+  margin-top: -650px;
   transform: rotate(-40deg);
 }
 
 .cherryFlower2{
   width: 170px;
-  margin-top: -450px;
+  margin-top: -250px;
   margin-left: 84%;
   transform: rotate(120deg);
 }
 
 .cherryFlower3{
-  margin-top: -790px;
+  margin-top: -590px;
   margin-left: 55%;
 }
 
 .cherryFlower4{
-  margin-top: -350px;
+  margin-top: -150px;
   margin-left: 30%;
   transform: rotate(40deg);
 }
@@ -195,7 +203,7 @@ h2{
 
 .projects{
   background: linear-gradient(to bottom, transparent, #eff7ff, pink), url("./imgs/cherryleaves.gif");
-  height: 2100px;
+  padding-bottom: 20%;
 }
 
 .projectContainer{
@@ -207,8 +215,8 @@ h2{
 .project{
   background-color: rgb(255, 255, 255);
   padding: 20px;
+  border-radius: 5px;
   border: 2px solid #000;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -225,13 +233,9 @@ h2{
   justify-content: space-between;
 }
 
-.headerContainer img{
-  width: 300px;
-}
-
 .project img:not(.icon){
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-bottom: 20px;
 }
 
@@ -254,6 +258,7 @@ h2{
   flex-direction: row;
   gap: 10px;
   padding: 0;
+  margin: 10px 0;
 }
 
 .tools li{
@@ -265,7 +270,6 @@ h2{
 
 .tools li:hover{
   background-color: rgb(207, 104, 122);
-  color: white;
   cursor: pointer;
   animation: bounce 0.6s ease;
 }
@@ -284,6 +288,7 @@ h2{
   display: flex;
   gap: 100px;
   background-color: pink;
+  justify-content: center;
 }
 
 .contact h3{
@@ -337,10 +342,6 @@ input[type=text]{
   animation: bounce 0.6s ease; /* Apply the bounce animation from the keyframe*/
 }
 
-.contact{
-  justify-content: center;
-}
-
 .contact .btnContainer{
   display: flex;
   align-content: center;
@@ -368,7 +369,6 @@ input[type=text]{
 .headContainer{
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .contact .icons{

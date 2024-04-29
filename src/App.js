@@ -139,12 +139,14 @@ function App() {
         </ul>
       </nav>
       <section ref={homeRef} className="home">
-        <h1> Hi, i'm Pauleena! </h1>
-        <p> 
-          <span style={{ fontWeight: boldOne ? 'bold' : 'normal' }}>Paw</span> -{' '}
-          <span style={{ fontWeight: boldTwo ? 'bold' : 'normal' }}>lee</span> -{' '}
-          <span style={{ fontWeight: boldThree ? 'bold' : 'normal' }}>nuh</span>
-        </p>
+        <div className="headerContainer">
+          <h1> Hi, i'm Pauleena! </h1>
+          <p> 
+            <span style={{ fontWeight: boldOne ? 'bold' : 'normal' }}>Paw</span> -{' '}
+            <span style={{ fontWeight: boldTwo ? 'bold' : 'normal' }}>lee</span> -{' '}
+            <span style={{ fontWeight: boldThree ? 'bold' : 'normal' }}>nuh</span>
+          </p>
+        </div>
         <img className="cherryTree" src={cherrytree} alt="cherry tree"/>
       </section>
       <section ref={aboutRef} className="about">
