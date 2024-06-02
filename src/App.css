@@ -122,11 +122,27 @@ h2{
   padding: 100px;
 }
 
+.aboutContainer{
+  padding: 100px 0;
+  position: relative;
+}
+
+.aboutContainer .cherryFlower1{
+  transform: rotate(-40deg);
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  margin-top: -50px;
+  top: 0;
+  left: 0;
+}
+
 .about{
   background: linear-gradient(to bottom, white, pink);
   display: flex;
   align-items: center;
   gap: 150px;
+  position: relative;
 }
 
 .about p{
@@ -137,34 +153,36 @@ h2{
   width: 500px;
 }
 
-.cherryFlowers img{
+.imgContainer{
+  position: relative;
+}
+
+.cherryFlower2{
   position: absolute;
+  top: 0;
+  left: 0;
   width: 200px;
   height: 200px;
 }
 
-.cherryFlower1{
-  margin-top: -650px;
-  transform: rotate(-40deg);
-}
-
-.cherryFlower2{
-  width: 170px;
-  margin-top: -250px;
-  margin-left: 84%;
-  transform: rotate(120deg);
-}
-
 .cherryFlower3{
-  margin-top: -590px;
-  margin-left: 55%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  transform: rotate(-70deg);
 }
 
 .cherryFlower4{
-  margin-top: -150px;
-  margin-left: 30%;
-  transform: rotate(40deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  margin-top: 30px;
+  width: 170px;
+  bottom: 0;
+  right: 0;
 }
+
 .skills{
   height: 500px;
   background: linear-gradient(to bottom, pink,white);

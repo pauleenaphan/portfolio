@@ -11,7 +11,7 @@ import peachgif from './imgs/peachgif.gif';
 import weatherproject from './imgs/projects/weatherproject.png';
 import mentalmeproject from './imgs/projects/mentalmeproject.png';
 import todoproject from './imgs/projects/todoproject.png';
-import etchasketchproject from './imgs/projects/etchasketchproject.png';
+import cattagramproject from './imgs/projects/cattagramproject.png';
 
 //icons
 import githubicon from './imgs/icons/githubicon.png';
@@ -153,20 +153,19 @@ function App() {
         <div className="aboutContainer">
           <h2> About Me </h2>
           <p> 
-            I am currently in my fourth year at California State University, Fullerton, where I 
-            am pursuing a degree in computer science. My passion for technology and web development has led me to 
+            Hi! I graduated from CSUF with a computer science degree in May 2024. My passion for technology and web development has led me to 
             aspire to become a web developer. Outside of my academic pursuits, I enjoy drawing and watching shows. 
             I am particularly interested in both front-end and back-end development, and I am eager to learn and 
-            explore new technologies in the field
+            explore new technologies in the field.
           </p>
+          <img className="cherryFlower1" src={cherryflower} alt="cherry flower"/>
+          <img className="cherryFlower4" src={cherryflower} alt="cherry flower"/>
         </div>
-        <img className="profilePic" src={profilephoto} alt="pauleena phan"/>
-      </section>
-      <section className="cherryFlowers">
-        <img className="cherryFlower1" src={cherryflower} alt="cherry flower"/>
-        <img className="cherryFlower2" src={cherryflower} alt="cherry flower"/>
-        <img className="cherryFlower3" src={cherryflower} alt="cherry flower"/>
-        <img className="cherryFlower4" src={cherryflower} alt="cherry flower"/>
+        <div className="imgContainer">
+          <img className="profilePic" src={profilephoto} alt="pauleena phan"/>
+          <img className="cherryFlower2" src={cherryflower} alt="cherry flower"/>
+          <img className="cherryFlower3" src={cherryflower} alt="cherry flower"/>
+        </div>
       </section>
       <section ref={skillsRef} className="skills">
         <h2> Skills and Technologies </h2>
@@ -208,24 +207,26 @@ function App() {
         </div>
         <div className="projectContainer">
           <div className="project">
-            <img src={etchasketchproject} alt="etch a sketch project"/>
-            <h3> Etch-a-Sketch </h3>
+            <img src={cattagramproject} alt="cattagram logo"/>
+            <h3> Cattagram </h3>
             <p> 
-              Etch-a-sketch application that enables users to create drawings. Users have the ability to customize the 
-              grid size and choose from a variety of colors to draw with.
+              Cattagram is a social media web app that revolves around cats. Users can post pictures of their cats
+              and add other users as friends. 
             </p>
             <div className="tools">
               <ul>
                 <li> HTML </li>
                 <li> CSS </li>
                 <li> Javascript </li>
+                <li> React </li>
+                <li> Firebase </li>
               </ul>
             </div>
             <div className="iconContainer">
-              <a href="https://github.com/pauleenaphan/Etch-a-Sketch" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/pauleenaphan/Cattagram" target="_blank" rel="noopener noreferrer">
                 <img src={githubicon} alt="github icon" className="icon" />
               </a>
-              <a href="https://pauleenaphan.github.io/Etch-a-Sketch/" target="_blank" rel="noopener noreferrer">
+              <a href="https://665a6e451a96a20008aee477--cattagram.netlify.app" target="_blank" rel="noopener noreferrer">
                 <img src={livesiteicon} alt="site icon" className="icon" />
               </a>
             </div>
@@ -236,7 +237,7 @@ function App() {
               <h3> Things you need TODO </h3>
               <p> 
                 This application serves as a todo manager, offering users the ability to create, view, edit, and 
-                remove tasks from their list 
+                remove tasks from their list.
               </p>
               <div className="tools">
                 <ul>
