@@ -3,7 +3,7 @@
 This portfolio website serves as a showcase of my proficiency in web development and programming. It features a collection of my projects and provides insights into my skills and background.
 
 # Live site
-[Deployed Using Netfily](https://master--pauleenaportfoliosite.netlify.app)
+[Deployed Using Netfily](https://665ccad1eda1e10008cf64c0--pauleenaportfoliosite.netlify.app/)
 
 
 
