@@ -264,7 +264,7 @@ function App() {
             <h3> MentalMe </h3>
             <p> 
               A mobile app that focuses on mental wellness, where users can record their emotions through journaling. 
-              Moobie, our friendly beaver bear mascot, accompanies users on their personal journey, providing 
+              Moobie, our mascot, accompanies users on their personal journey, providing 
               support and guidance along the way.
             </p>
             <div className="tools">
