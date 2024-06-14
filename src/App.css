@@ -37,7 +37,8 @@
 
 *{
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Poppins', sans-serif;
 }
 
 ul{
@@ -63,7 +64,7 @@ h2{
   background-color: pink;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 9999;
 }
 
 .navBar li:hover {
@@ -72,7 +73,7 @@ h2{
 }
 
 .navBar button:hover{
-  color: rgb(184, 43, 165);
+  color: rgb(128, 43, 116);
 }
 
 .navBar ul{
@@ -105,7 +106,7 @@ h2{
 
 .home h1{
   font-size: 80px;
-
+  
 }
 
 .home p{
@@ -175,10 +176,9 @@ h2{
 }
 
 .cherryFlower4{
-  transform: rotate(-90deg);
+  transform: rotate(-70deg);
   position: absolute;
-  margin-top: 30px;
-  width: 170px;
+  width: 120px;
   bottom: 0;
   right: 0;
 }
