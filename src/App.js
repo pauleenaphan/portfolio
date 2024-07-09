@@ -12,11 +12,16 @@ import weatherproject from './imgs/projects/weatherproject.png';
 import mentalmeproject from './imgs/projects/mentalmeproject.png';
 import todoproject from './imgs/projects/todoproject.png';
 import cattagramproject from './imgs/projects/cattagramproject.png';
+import blogproject from './imgs/projects/blogproject.png';
+import membersproject from './imgs/projects/membersonlyproject.png';
+import etchasketchproject from './imgs/projects/etchasketchproject.png';
 
 //icons
 import githubicon from './imgs/icons/githubicon.png';
 import livesiteicon from './imgs/icons/livesiteicon.jpg';
 import linkedinicon from './imgs/icons/linkedinicon.png';
+
+//svg icons
 import htmlicon from './imgs/icons/htmlicon.svg';
 import cssicon from './imgs/icons/cssicon.svg';
 import jsicon from './imgs/icons/jsicon.svg';
@@ -24,6 +29,8 @@ import reacticon from './imgs/icons/reacticon.svg';
 import firebaseicon from './imgs/icons/firebaseicon.svg';
 import vscodeicon from './imgs/icons/vscodeicon.svg';
 import giticon from './imgs/icons/giticon.svg';
+import mongodbicon from './imgs/icons/mongodbicon.svg';
+import nodejsicon from './imgs/icons/nodejsicon.svg';
 
 import mailbox from './imgs/mailbox.jpg';
 
@@ -187,8 +194,16 @@ function App() {
             <p> React </p>
           </div>
           <div className="iconContainer">
+            <img src={nodejsicon} alt="nodejs icon"/>
+            <p> Node.js </p>
+          </div>
+          <div className="iconContainer">
             <img src={firebaseicon} alt="firebase icon"/>
             <p> Firebase </p>
+          </div>
+          <div className="iconContainer">
+            <img src={mongodbicon} alt="mongodb icon"/>
+            <p> MongoDB </p>
           </div>
           <div className="iconContainer">
             <img src={giticon} alt="github icon"/>
@@ -206,6 +221,56 @@ function App() {
           <img src={peachgif} alt="peachgif"/>
         </div>
         <div className="projectContainer">
+          <div className="project"> 
+            <img src={blogproject} alt="blog project"/>
+            <div>
+              <h3> BlogWog </h3>
+              <p> 
+                A blog website where users can browse various posts. Registered users can log in to leave comments on the post.
+              </p>
+              <div className="tools">
+                <ul>
+                  <li> Express.js </li>
+                  <li> React </li>
+                  <li> CSS </li>
+                  <li> MongoDB </li>
+                </ul>
+              </div>
+              <div className="iconContainer">
+                <a href="https://github.com/pauleenaphan/blog-api/tree/main" target="_blank" rel="noopener noreferrer">
+                  <img src={githubicon} alt="github icon" className="icon"/>
+                </a>
+                <a href="https://pauleenaphan.github.io/todo-project/dist/" target="_blank" rel="noopener noreferrer">
+                  <img src={livesiteicon} alt="site icon" className="icon"/>
+                </a>
+              </div> 
+            </div>
+          </div>
+          <div className="project">
+            <img src={membersproject} alt="members only project"/>
+            <div>
+              <h3> MembersOnly </h3>
+                <p>
+                  A message board where any users can send a message to the board. Only members can see the author of the message and
+                  when they posted.
+                </p>
+                <div className="tools">
+                    <ul>
+                      <li> Express.js </li>
+                      <li> Jade </li>
+                      <li> MongoDB </li>
+                    </ul>
+                </div>
+                <div className="iconContainer">
+                  <a href="https://github.com/pauleenaphan/members-only">
+                    <img src={githubicon} alt="github icon" className="icon"/>
+                  </a>
+                  <a href="https://memberss-only.glitch.me/" target="_blank" rel="noopener noreferrer">
+                    <img src={livesiteicon} alt="site icon" className="icon"/>
+                  </a>
+                </div>
+            </div>
+          </div>
           <div className="project">
             <img src={cattagramproject} alt="cattagram logo"/>
             <h3> Cattagram </h3>
@@ -226,46 +291,17 @@ function App() {
               <a href="https://github.com/pauleenaphan/Cattagram" target="_blank" rel="noopener noreferrer">
                 <img src={githubicon} alt="github icon" className="icon" />
               </a>
-              <a href="https://665a6e451a96a20008aee477--cattagram.netlify.app" target="_blank" rel="noopener noreferrer">
+              <a href="https://6668d4121f472c000763364f--cattagram.netlify.app" target="_blank" rel="noopener noreferrer">
                 <img src={livesiteicon} alt="site icon" className="icon" />
               </a>
             </div>
-          </div>
-          <div className="project"> 
-            <img src={todoproject} alt="todo project"/>
-            <div>
-              <h3> Things you need TODO </h3>
-              <p> 
-                This application serves as a todo manager, offering users the ability to create, view, edit, and 
-                remove tasks from their list.
-              </p>
-              <div className="tools">
-                <ul>
-                  <li> HTML </li>
-                  <li> CSS </li>
-                  <li> Javascript </li>
-                  <li> Local storage</li>
-                </ul>
-              </div>
-              <div className="iconContainer">
-                <a href="https://github.com/pauleenaphan/todo-project" target="_blank" rel="noopener noreferrer">
-                  <img src={githubicon} alt="github icon" className="icon"/>
-                </a>
-
-                <a href="https://pauleenaphan.github.io/todo-project/dist/" target="_blank" rel="noopener noreferrer">
-                  <img src={livesiteicon} alt="site icon" className="icon"/>
-                </a>
-              </div> 
-            </div>
-            
           </div>
           <div className="project">
             <img src={mentalmeproject} alt="mentalme project"/>
             <h3> MentalMe </h3>
             <p> 
-              A mobile app that focuses on mental wellness, where users can record their emotions through journaling. 
-              Moobie, our mascot, accompanies users on their personal journey, providing 
-              support and guidance along the way.
+              A mental wellness mobile app where users journal their emotions.
+              Moobie, our mascot, supports and guides users on their journey
             </p>
             <div className="tools">
               <ul>
@@ -278,17 +314,17 @@ function App() {
               <a href="https://github.com/pauleenaphan/MentalMe" target="_blank" rel="noopener noreferrer">
                 <img src={githubicon} alt="github icon" className="icon"/>
               </a>
-
-              <a href="<YOUR_LIVE_SITE_URL>" target="_blank" rel="noopener noreferrer">
+              {/* <a href="<YOUR_LIVE_SITE_URL>" target="_blank" rel="noopener noreferrer">
                 <img src={livesiteicon} alt="site icon" className="icon"/>
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="project">
-            <img src={weatherproject} href="https://github.com/pauleenaphan/weather-app" alt="weather page screen"/>
+            <img src={weatherproject} alt="weather page screen"/>
             <h3> Weather Watcher </h3>
             <p>
-              This weather page enables users to enter a city, after which it displays the current weather conditions for that location. This project uses weather API
+              This weather page enables users to enter a city, after which it displays the current weather conditions for that location. 
+              This project uses weather API.
             </p>
             <div className="tools">
               <ul>
@@ -302,8 +338,29 @@ function App() {
               <a href="https://github.com/pauleenaphan/weather-app" target="_blank" rel="noopener noreferrer">
                 <img src={githubicon} alt="github icon" className="icon"/>
               </a>
-
               <a href="https://pauleenaphan.github.io/weather-app/src/index.html" target="_blank" rel="noopener noreferrer">
+                <img src={livesiteicon} alt="site icon" className="icon"/>
+              </a>
+            </div>
+          </div>
+          <div className="project">
+            <img src={etchasketchproject} alt="Etch a Sketch"/>
+            <h3> Etch-a-Sketch </h3>
+            <p>
+              Etch-a-Sketch app where users can draw on a resizeable grid choosing different colors
+            </p>
+            <div className="tools">
+              <ul>
+                <li> HTML </li>
+                <li> Javascript </li>
+                <li> CSS </li>
+              </ul>
+            </div>
+            <div className="iconContainer">
+              <a href="https://github.com/pauleenaphan/Etch-a-Sketch?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">
+                <img src={githubicon} alt="github icon" className="icon"/>
+              </a>
+              <a href="https://pauleenaphan.github.io/Etch-a-Sketch/" target="_blank" rel="noopener noreferrer">
                 <img src={livesiteicon} alt="site icon" className="icon"/>
               </a>
             </div>

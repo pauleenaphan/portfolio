@@ -58,6 +58,12 @@ h2{
   margin-bottom: 5px;
 }
 
+/* .container:not(.navBar){
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+} */
+
 .navBar{
   padding: 15px 0;
   /* background-color: rgb(252, 145, 163); */
@@ -193,9 +199,10 @@ h2{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 70px 0;
+  flex-wrap: wrap;
+  margin: 20px 0;
   padding: 0 15px;
-}
+} 
 
 .icons .iconContainer p{
   font-size: 20px;
@@ -205,8 +212,11 @@ h2{
 
 .skills .icons{
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  height: 300px;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 200px;
 }
 
 .skills img{
@@ -226,15 +236,15 @@ h2{
 
 .projectContainer{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 80px;
 }
 
 .project{
   background-color: rgb(255, 255, 255);
-  padding: 20px;
+  padding: 25px;
+  width: 100%;
   border-radius: 20px;
-  /* border: 2px solid #000; */
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
@@ -252,11 +262,11 @@ h2{
   justify-content: space-between;
 }
 
-.project img:not(.icon){
+/* .project img:not(.icon){
   width: 100%;
-  height: 100%;
-  margin-bottom: 20px;
-}
+  height: 100%; 
+  margin-bottom: 20px; 
+} */
 
 .project h3{
   font-size: 30px;
@@ -275,6 +285,7 @@ h2{
 .tools ul{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 0;
   margin: 10px 0 20px 0;
@@ -308,6 +319,7 @@ h2{
   gap: 100px;
   background-color: pink;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contact h3{
@@ -387,6 +399,7 @@ input[type=text]{
 
 .headContainer{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
