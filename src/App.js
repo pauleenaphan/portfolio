@@ -10,7 +10,7 @@ import peachgif from './imgs/peachgif.gif';
 //project pictures
 import weatherproject from './imgs/projects/weatherproject.png';
 import mentalmeproject from './imgs/projects/mentalmeproject.png';
-import todoproject from './imgs/projects/todoproject.png';
+// import todoproject from './imgs/projects/todoproject.png';
 import cattagramproject from './imgs/projects/cattagramproject.png';
 import blogproject from './imgs/projects/blogproject.png';
 import membersproject from './imgs/projects/membersonlyproject.png';
@@ -240,7 +240,7 @@ function App() {
                 <a href="https://github.com/pauleenaphan/blog-api/tree/main" target="_blank" rel="noopener noreferrer">
                   <img src={githubicon} alt="github icon" className="icon"/>
                 </a>
-                <a href="https://pauleenaphan.github.io/todo-project/dist/" target="_blank" rel="noopener noreferrer">
+                <a href="https://main--blogwog.netlify.app/" target="_blank" rel="noopener noreferrer">
                   <img src={livesiteicon} alt="site icon" className="icon"/>
                 </a>
               </div> 
