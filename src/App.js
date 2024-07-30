@@ -10,10 +10,10 @@ import peachgif from './imgs/peachgif.gif';
 //project pictures
 import weatherproject from './imgs/projects/weatherproject.png';
 import mentalmeproject from './imgs/projects/mentalmeproject.png';
-// import todoproject from './imgs/projects/todoproject.png';
+
 import cattagramproject from './imgs/projects/cattagramproject.png';
 import blogproject from './imgs/projects/blogproject.png';
-import membersproject from './imgs/projects/membersonlyproject.png';
+import meowpopproject from "./imgs/projects/meowpopproject.png";
 import etchasketchproject from './imgs/projects/etchasketchproject.png';
 
 //icons
@@ -221,6 +221,33 @@ function App() {
           <img src={peachgif} alt="peachgif"/>
         </div>
         <div className="projectContainer">
+          <div className="project">
+            <img src={meowpopproject} alt="meowpop"/>
+            <div>
+              <h3> Meow Pop </h3>
+              <p>
+                Meow Pop is an ecommerce website where users can browse and purchase items. 
+                Vendors on the site can list their products, update their listings, and remove them as needed.
+              </p>
+              <div className="tools">
+                <ul>
+                  <li> Express.js </li>
+                  <li> React </li>
+                  <li> MongoDB </li>
+                  <li> Typescript </li>
+                  <li> Amazon S3 </li>
+                </ul>
+              </div>
+              <div className="iconContainer">
+                <a href="https://github.com/pauleenaphan/Meow-Pop" target="_blank" rel="noopener noreferrer">
+                  <img src={githubicon} alt="github icon" className="icon"/>
+                </a>
+                <a href="https://main--meowpop.netlify.app/" target="_blank" rel="noopener noreferrer">
+                  <img src={livesiteicon} alt="site icon" className="icon"/>
+                </a>
+              </div> 
+            </div>
+          </div>
           <div className="project"> 
             <img src={blogproject} alt="blog project"/>
             <div>
@@ -244,31 +271,6 @@ function App() {
                   <img src={livesiteicon} alt="site icon" className="icon"/>
                 </a>
               </div> 
-            </div>
-          </div>
-          <div className="project">
-            <img src={membersproject} alt="members only project"/>
-            <div>
-              <h3> MembersOnly </h3>
-                <p>
-                  A message board where any users can send a message to the board. Only members can see the author of the message and
-                  when they posted.
-                </p>
-                <div className="tools">
-                    <ul>
-                      <li> Express.js </li>
-                      <li> Jade </li>
-                      <li> MongoDB </li>
-                    </ul>
-                </div>
-                <div className="iconContainer">
-                  <a href="https://github.com/pauleenaphan/members-only">
-                    <img src={githubicon} alt="github icon" className="icon"/>
-                  </a>
-                  <a href="https://memberss-only.glitch.me/" target="_blank" rel="noopener noreferrer">
-                    <img src={livesiteicon} alt="site icon" className="icon"/>
-                  </a>
-                </div>
             </div>
           </div>
           <div className="project">
